@@ -1305,21 +1305,21 @@ export default function Home() {
                 <div className="contact-icon">📧</div>
                 <div className="contact-details">
                   <h4>Email</h4>
-                  <p>contact@feanpaytech.com</p>
+                  <p>info@feanpaytechnologies.com.ng</p>
                 </div>
               </div>
               <div className="contact-method">
                 <div className="contact-icon">📱</div>
                 <div className="contact-details">
                   <h4>Phone</h4>
-                  <p>+234 (0) 800 000 0000</p>
+                  <p>+2347014307244</p>
                 </div>
               </div>
               <div className="contact-method">
                 <div className="contact-icon">📍</div>
                 <div className="contact-details">
                   <h4>Location</h4>
-                  <p>Lagos, Nigeria</p>
+                  <p>No 4 Temitope Adaboyan, Irepodun, Lagos, Nigeria, Lagos 100001</p>
                 </div>
               </div>
             </div>
