@@ -1,11 +1,9 @@
-"use client";
-
 import React from 'react';
 
 export default function Home() {
   return (
     <>
-      <style jsx global>{`
+      <style>{`
         :root {
           --primary: #2563eb;
           --primary-dark: #1e40af;
@@ -25,6 +23,10 @@ export default function Home() {
           box-sizing: border-box;
         }
 
+        html {
+          scroll-behavior: smooth;
+        }
+
         body {
           font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
           background: var(--bg-white);
@@ -33,7 +35,6 @@ export default function Home() {
           overflow-x: hidden;
         }
 
-        /* Navigation */
         nav {
           position: fixed;
           top: 0;
@@ -50,14 +51,8 @@ export default function Home() {
         }
 
         @keyframes slideDown {
-          from {
-            transform: translateY(-100%);
-            opacity: 0;
-          }
-          to {
-            transform: translateY(0);
-            opacity: 1;
-          }
+          from { transform: translateY(-100%); opacity: 0; }
+          to { transform: translateY(0); opacity: 1; }
         }
 
         .logo {
@@ -84,31 +79,24 @@ export default function Home() {
           position: relative;
         }
 
-        .nav-links a:hover {
-          color: var(--primary);
-        }
+        .nav-links a:hover { color: var(--primary); }
 
         .nav-cta {
           padding: 0.7rem 1.5rem;
           background: var(--primary);
-          color: white;
+          color: white !important;
           border-radius: 8px;
           transition: all 0.3s ease;
         }
 
-        .nav-cta:hover {
-          background: var(--primary-dark);
-          transform: translateY(-2px);
-        }
+        .nav-cta:hover { background: var(--primary-dark); transform: translateY(-2px); }
 
-        /* Section Spacing */
         section {
           padding: 6rem 5%;
           max-width: 1400px;
           margin: 0 auto;
         }
 
-        /* Hero Section */
         .hero {
           min-height: 100vh;
           display: flex;
@@ -125,14 +113,8 @@ export default function Home() {
         }
 
         @keyframes fadeInLeft {
-          from {
-            opacity: 0;
-            transform: translateX(-30px);
-          }
-          to {
-            opacity: 1;
-            transform: translateX(0);
-          }
+          from { opacity: 0; transform: translateX(-30px); }
+          to { opacity: 1; transform: translateX(0); }
         }
 
         .hero-tag {
@@ -157,9 +139,7 @@ export default function Home() {
           letter-spacing: -1px;
         }
 
-        .hero h1 .highlight {
-          color: var(--primary);
-        }
+        .hero h1 .highlight { color: var(--primary); }
 
         .hero p {
           font-size: 1.15rem;
@@ -168,11 +148,7 @@ export default function Home() {
           line-height: 1.8;
         }
 
-        .hero-buttons {
-          display: flex;
-          gap: 1rem;
-          flex-wrap: wrap;
-        }
+        .hero-buttons { display: flex; gap: 1rem; flex-wrap: wrap; }
 
         .btn {
           padding: 1rem 2rem;
@@ -204,11 +180,7 @@ export default function Home() {
           border: 2px solid var(--border);
         }
 
-        .btn-secondary:hover {
-          border-color: var(--primary);
-          color: var(--primary);
-          transform: translateY(-2px);
-        }
+        .btn-secondary:hover { border-color: var(--primary); color: var(--primary); transform: translateY(-2px); }
 
         .hero-image {
           flex: 1;
@@ -217,14 +189,8 @@ export default function Home() {
         }
 
         @keyframes fadeInRight {
-          from {
-            opacity: 0;
-            transform: translateX(30px);
-          }
-          to {
-            opacity: 1;
-            transform: translateX(0);
-          }
+          from { opacity: 0; transform: translateX(30px); }
+          to { opacity: 1; transform: translateX(0); }
         }
 
         .hero-visual {
@@ -255,28 +221,13 @@ export default function Home() {
           50% { transform: scale(1.1); opacity: 0.8; }
         }
 
-        .hero-icon {
-          font-size: 8rem;
-          position: relative;
-          z-index: 2;
-        }
+        .hero-icon { font-size: 8rem; position: relative; z-index: 2; }
 
-        /* Section Headers */
-        .section-header {
-          text-align: center;
-          margin-bottom: 4rem;
-          animation: fadeInUp 0.6s ease;
-        }
+        .section-header { text-align: center; margin-bottom: 4rem; }
 
         @keyframes fadeInUp {
-          from {
-            opacity: 0;
-            transform: translateY(20px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
+          from { opacity: 0; transform: translateY(20px); }
+          to { opacity: 1; transform: translateY(0); }
         }
 
         .section-tag {
@@ -297,17 +248,9 @@ export default function Home() {
           letter-spacing: -0.5px;
         }
 
-        .section-header p {
-          color: var(--text-gray);
-          font-size: 1.1rem;
-          max-width: 700px;
-          margin: 0 auto;
-        }
+        .section-header p { color: var(--text-gray); font-size: 1.1rem; max-width: 700px; margin: 0 auto; }
 
-        /* Services Section */
-        .services {
-          background: var(--bg-light);
-        }
+        .services { background: var(--bg-light); }
 
         .services-grid {
           display: grid;
@@ -321,18 +264,9 @@ export default function Home() {
           border-radius: 16px;
           padding: 2.5rem;
           transition: all 0.3s ease;
-          animation: fadeInUp 0.6s ease both;
         }
 
-        .service-card:nth-child(1) { animation-delay: 0.1s; }
-        .service-card:nth-child(2) { animation-delay: 0.2s; }
-        .service-card:nth-child(3) { animation-delay: 0.3s; }
-
-        .service-card:hover {
-          transform: translateY(-8px);
-          box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
-          border-color: var(--primary);
-        }
+        .service-card:hover { transform: translateY(-8px); box-shadow: 0 12px 40px rgba(0,0,0,0.08); border-color: var(--primary); }
 
         .service-icon {
           width: 60px;
@@ -346,20 +280,9 @@ export default function Home() {
           margin-bottom: 1.5rem;
         }
 
-        .service-card h3 {
-          font-family: 'Sora', sans-serif;
-          font-size: 1.4rem;
-          margin-bottom: 1rem;
-          color: var(--text-dark);
-          font-weight: 600;
-        }
+        .service-card h3 { font-family: 'Sora', sans-serif; font-size: 1.4rem; margin-bottom: 1rem; color: var(--text-dark); font-weight: 600; }
+        .service-card p { color: var(--text-gray); line-height: 1.7; }
 
-        .service-card p {
-          color: var(--text-gray);
-          line-height: 1.7;
-        }
-
-        /* Products Section */
         .products-grid {
           display: grid;
           grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -373,13 +296,9 @@ export default function Home() {
           border-radius: 20px;
           overflow: hidden;
           transition: all 0.3s ease;
-          animation: fadeInUp 0.6s ease both;
         }
 
-        .product-card:hover {
-          transform: translateY(-8px);
-          box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
-        }
+        .product-card:hover { transform: translateY(-8px); box-shadow: 0 20px 50px rgba(0,0,0,0.1); }
 
         .product-image {
           height: 250px;
@@ -391,9 +310,7 @@ export default function Home() {
           color: white;
         }
 
-        .product-content {
-          padding: 2rem;
-        }
+        .product-content { padding: 2rem; }
 
         .product-badge {
           display: inline-block;
@@ -406,23 +323,10 @@ export default function Home() {
           margin-bottom: 1rem;
         }
 
-        .product-card h3 {
-          font-family: 'Sora', sans-serif;
-          font-size: 1.6rem;
-          margin-bottom: 1rem;
-          font-weight: 700;
-        }
+        .product-card h3 { font-family: 'Sora', sans-serif; font-size: 1.6rem; margin-bottom: 1rem; font-weight: 700; }
+        .product-card p { color: var(--text-gray); line-height: 1.7; margin-bottom: 1.5rem; }
 
-        .product-card p {
-          color: var(--text-gray);
-          line-height: 1.7;
-          margin-bottom: 1.5rem;
-        }
-
-        .product-features {
-          list-style: none;
-          margin-bottom: 1.5rem;
-        }
+        .product-features { list-style: none; margin-bottom: 1.5rem; }
 
         .product-features li {
           padding: 0.5rem 0;
@@ -432,16 +336,9 @@ export default function Home() {
           gap: 0.5rem;
         }
 
-        .product-features li::before {
-          content: '✓';
-          color: var(--success);
-          font-weight: bold;
-        }
+        .product-features li::before { content: '✓'; color: var(--success); font-weight: bold; }
 
-        /* Technology Stack */
-        .tech-stack {
-          background: var(--bg-light);
-        }
+        .tech-stack { background: var(--bg-light); }
 
         .tech-grid {
           display: grid;
@@ -457,45 +354,20 @@ export default function Home() {
           padding: 2rem;
           text-align: center;
           transition: all 0.3s ease;
-          animation: fadeInUp 0.6s ease both;
         }
 
-        .tech-item:hover {
-          transform: translateY(-5px);
-          box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
-        }
+        .tech-item:hover { transform: translateY(-5px); box-shadow: 0 8px 25px rgba(0,0,0,0.06); }
+        .tech-item h4 { font-family: 'Sora', sans-serif; margin-top: 1rem; color: var(--text-dark); font-weight: 600; }
+        .tech-icon { font-size: 3rem; margin-bottom: 0.5rem; }
 
-        .tech-item h4 {
-          font-family: 'Sora', sans-serif;
-          margin-top: 1rem;
-          color: var(--text-dark);
-          font-weight: 600;
-        }
-
-        .tech-icon {
-          font-size: 3rem;
-          margin-bottom: 0.5rem;
-        }
-
-        /* Process Section */
         .process-steps {
           display: grid;
           grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
           gap: 2rem;
           margin-top: 3rem;
-          position: relative;
         }
 
-        .step {
-          position: relative;
-          padding: 2rem;
-          animation: fadeInUp 0.6s ease both;
-        }
-
-        .step:nth-child(1) { animation-delay: 0.1s; }
-        .step:nth-child(2) { animation-delay: 0.2s; }
-        .step:nth-child(3) { animation-delay: 0.3s; }
-        .step:nth-child(4) { animation-delay: 0.4s; }
+        .step { position: relative; padding: 2rem; }
 
         .step-number {
           width: 60px;
@@ -512,32 +384,12 @@ export default function Home() {
           font-family: 'Sora', sans-serif;
         }
 
-        .step h3 {
-          font-family: 'Sora', sans-serif;
-          font-size: 1.3rem;
-          margin-bottom: 1rem;
-          font-weight: 600;
-        }
+        .step h3 { font-family: 'Sora', sans-serif; font-size: 1.3rem; margin-bottom: 1rem; font-weight: 600; }
+        .step p { color: var(--text-gray); line-height: 1.7; }
 
-        .step p {
-          color: var(--text-gray);
-          line-height: 1.7;
-        }
-
-        /* Stats Section */
-        .stats {
-          background: var(--primary);
-          color: white;
-        }
-
-        .stats .section-header h2,
-        .stats .section-tag {
-          color: white;
-        }
-
-        .stats .section-header p {
-          color: rgba(255, 255, 255, 0.9);
-        }
+        .stats { background: var(--primary); color: white; }
+        .stats .section-header h2, .stats .section-tag { color: white; }
+        .stats .section-header p { color: rgba(255,255,255,0.9); }
 
         .stats-grid {
           display: grid;
@@ -546,28 +398,11 @@ export default function Home() {
           margin-top: 3rem;
         }
 
-        .stat-item {
-          text-align: center;
-          animation: fadeInUp 0.6s ease both;
-        }
+        .stat-item { text-align: center; }
+        .stat-number { font-family: 'Sora', sans-serif; font-size: 3.5rem; font-weight: 800; display: block; margin-bottom: 0.5rem; }
+        .stat-label { font-size: 1.1rem; opacity: 0.9; }
 
-        .stat-number {
-          font-family: 'Sora', sans-serif;
-          font-size: 3.5rem;
-          font-weight: 800;
-          display: block;
-          margin-bottom: 0.5rem;
-        }
-
-        .stat-label {
-          font-size: 1.1rem;
-          opacity: 0.9;
-        }
-
-        /* Why Choose Us */
-        .why-choose {
-          background: var(--bg-light);
-        }
+        .why-choose { background: var(--bg-light); }
 
         .features-grid {
           display: grid;
@@ -582,13 +417,9 @@ export default function Home() {
           border-radius: 16px;
           padding: 2rem;
           transition: all 0.3s ease;
-          animation: fadeInUp 0.6s ease both;
         }
 
-        .feature-card:hover {
-          transform: translateY(-5px);
-          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-        }
+        .feature-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.08); }
 
         .feature-card h3 {
           font-family: 'Sora', sans-serif;
@@ -600,14 +431,8 @@ export default function Home() {
           gap: 0.8rem;
         }
 
-        .feature-card h3::before {
-          content: '→';
-          color: var(--primary);
-          font-weight: bold;
-          font-size: 1.5rem;
-        }
+        .feature-card h3::before { content: '→'; color: var(--primary); font-weight: bold; font-size: 1.5rem; }
 
-        /* Team Section */
         .team-intro {
           text-align: center;
           max-width: 800px;
@@ -615,15 +440,9 @@ export default function Home() {
           padding: 3rem;
           background: var(--bg-light);
           border-radius: 16px;
-          animation: fadeInUp 0.6s ease;
         }
 
-        .team-intro h3 {
-          font-family: 'Sora', sans-serif;
-          font-size: 1.8rem;
-          margin-bottom: 1rem;
-          font-weight: 600;
-        }
+        .team-intro h3 { font-family: 'Sora', sans-serif; font-size: 1.8rem; margin-bottom: 1rem; font-weight: 600; }
 
         .team-stats {
           display: grid;
@@ -632,27 +451,11 @@ export default function Home() {
           margin-top: 2rem;
         }
 
-        .team-stat {
-          text-align: center;
-        }
+        .team-stat { text-align: center; }
+        .team-stat-number { font-family: 'Sora', sans-serif; font-size: 2.5rem; font-weight: 700; color: var(--primary); display: block; }
+        .team-stat-label { color: var(--text-gray); margin-top: 0.5rem; }
 
-        .team-stat-number {
-          font-family: 'Sora', sans-serif;
-          font-size: 2.5rem;
-          font-weight: 700;
-          color: var(--primary);
-          display: block;
-        }
-
-        .team-stat-label {
-          color: var(--text-gray);
-          margin-top: 0.5rem;
-        }
-
-        /* Testimonials */
-        .testimonials {
-          background: var(--bg-light);
-        }
+        .testimonials { background: var(--bg-light); }
 
         .testimonials-grid {
           display: grid;
@@ -666,22 +469,11 @@ export default function Home() {
           border: 1px solid var(--border);
           border-radius: 16px;
           padding: 2.5rem;
-          animation: fadeInUp 0.6s ease both;
         }
 
-        .testimonial-text {
-          font-size: 1.1rem;
-          line-height: 1.8;
-          color: var(--text-gray);
-          margin-bottom: 2rem;
-          font-style: italic;
-        }
+        .testimonial-text { font-size: 1.1rem; line-height: 1.8; color: var(--text-gray); margin-bottom: 2rem; font-style: italic; }
 
-        .testimonial-author {
-          display: flex;
-          align-items: center;
-          gap: 1rem;
-        }
+        .testimonial-author { display: flex; align-items: center; gap: 1rem; }
 
         .author-avatar {
           width: 50px;
@@ -694,18 +486,9 @@ export default function Home() {
           font-size: 1.5rem;
         }
 
-        .author-info h4 {
-          font-family: 'Sora', sans-serif;
-          font-weight: 600;
-          margin-bottom: 0.2rem;
-        }
+        .author-info h4 { font-family: 'Sora', sans-serif; font-weight: 600; margin-bottom: 0.2rem; }
+        .author-info p { color: var(--text-light); font-size: 0.9rem; }
 
-        .author-info p {
-          color: var(--text-light);
-          font-size: 0.9rem;
-        }
-
-        /* CTA Section */
         .cta-section {
           background: linear-gradient(135deg, var(--primary), var(--accent));
           color: white;
@@ -713,35 +496,13 @@ export default function Home() {
           border-radius: 24px;
           padding: 5rem 3rem;
           margin: 6rem 5%;
-          animation: fadeInUp 0.8s ease;
         }
 
-        .cta-section h2 {
-          font-family: 'Sora', sans-serif;
-          font-size: clamp(2rem, 4vw, 3rem);
-          font-weight: 700;
-          margin-bottom: 1.5rem;
-          letter-spacing: -0.5px;
-        }
+        .cta-section h2 { font-family: 'Sora', sans-serif; font-size: clamp(2rem, 4vw, 3rem); font-weight: 700; margin-bottom: 1.5rem; letter-spacing: -0.5px; }
+        .cta-section p { font-size: 1.2rem; margin-bottom: 2.5rem; opacity: 0.95; }
+        .cta-section .btn { background: white; color: var(--primary); font-weight: 700; }
+        .cta-section .btn:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
 
-        .cta-section p {
-          font-size: 1.2rem;
-          margin-bottom: 2.5rem;
-          opacity: 0.95;
-        }
-
-        .cta-section .btn {
-          background: white;
-          color: var(--primary);
-          font-weight: 700;
-        }
-
-        .cta-section .btn:hover {
-          transform: translateY(-3px);
-          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-        }
-
-        /* Contact Section */
         .contact-container {
           display: grid;
           grid-template-columns: 1fr 1fr;
@@ -749,20 +510,8 @@ export default function Home() {
           margin-top: 3rem;
         }
 
-        .contact-info {
-          animation: fadeInLeft 0.6s ease;
-        }
-
-        .contact-info h3 {
-          font-family: 'Sora', sans-serif;
-          font-size: 1.8rem;
-          margin-bottom: 1.5rem;
-          font-weight: 600;
-        }
-
-        .contact-methods {
-          margin-top: 2rem;
-        }
+        .contact-info h3 { font-family: 'Sora', sans-serif; font-size: 1.8rem; margin-bottom: 1.5rem; font-weight: 600; }
+        .contact-methods { margin-top: 2rem; }
 
         .contact-method {
           display: flex;
@@ -772,9 +521,7 @@ export default function Home() {
           border-bottom: 1px solid var(--border);
         }
 
-        .contact-method:last-child {
-          border-bottom: none;
-        }
+        .contact-method:last-child { border-bottom: none; }
 
         .contact-icon {
           width: 50px;
@@ -787,35 +534,16 @@ export default function Home() {
           font-size: 1.5rem;
         }
 
-        .contact-details h4 {
-          font-weight: 600;
-          margin-bottom: 0.3rem;
-        }
+        .contact-details h4 { font-weight: 600; margin-bottom: 0.3rem; }
+        .contact-details p { color: var(--text-gray); }
 
-        .contact-details p {
-          color: var(--text-gray);
-        }
+        .contact-form { background: var(--bg-light); padding: 3rem; border-radius: 16px; }
 
-        .contact-form {
-          background: var(--bg-light);
-          padding: 3rem;
-          border-radius: 16px;
-          animation: fadeInRight 0.6s ease;
-        }
+        .form-group { margin-bottom: 1.5rem; }
 
-        .form-group {
-          margin-bottom: 1.5rem;
-        }
+        .form-group label { display: block; margin-bottom: 0.5rem; font-weight: 600; color: var(--text-dark); }
 
-        .form-group label {
-          display: block;
-          margin-bottom: 0.5rem;
-          font-weight: 600;
-          color: var(--text-dark);
-        }
-
-        .form-group input,
-        .form-group textarea {
+        .form-group input, .form-group textarea {
           width: 100%;
           padding: 1rem;
           border: 1px solid var(--border);
@@ -826,147 +554,149 @@ export default function Home() {
           background: white;
         }
 
-        .form-group input:focus,
-        .form-group textarea:focus {
+        .form-group input:focus, .form-group textarea:focus {
           outline: none;
           border-color: var(--primary);
           box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
         }
 
-        .form-group textarea {
-          resize: vertical;
-          min-height: 150px;
-        }
+        .form-group textarea { resize: vertical; min-height: 150px; }
 
-        /* Footer */
-        footer {
-          background: var(--text-dark);
-          color: white;
-          padding: 4rem 5% 2rem;
-        }
+        footer { background: var(--text-dark); color: white; padding: 4rem 5% 2rem; }
 
         .footer-content {
           display: grid;
-          grid-template-columns: 2fr 1fr 1fr 1fr;
+          grid-template-columns: 2fr 1fr 1fr;
           gap: 3rem;
           margin-bottom: 3rem;
         }
 
-        .footer-section h3 {
-          font-family: 'Sora', sans-serif;
-          margin-bottom: 1.5rem;
-          font-size: 1.2rem;
-          font-weight: 600;
-        }
-
-        .footer-section p {
-          color: rgba(255, 255, 255, 0.7);
-          line-height: 1.8;
-        }
-
-        .footer-section ul {
-          list-style: none;
-        }
-
-        .footer-section ul li {
-          margin-bottom: 0.8rem;
-        }
-
-        .footer-section a {
-          color: rgba(255, 255, 255, 0.7);
-          text-decoration: none;
-          transition: color 0.3s ease;
-        }
-
-        .footer-section a:hover {
-          color: white;
-        }
+        .footer-section h3 { font-family: 'Sora', sans-serif; margin-bottom: 1.5rem; font-size: 1.2rem; font-weight: 600; }
+        .footer-section p { color: rgba(255,255,255,0.7); line-height: 1.8; }
+        .footer-section ul { list-style: none; }
+        .footer-section ul li { margin-bottom: 0.8rem; }
+        .footer-section a { color: rgba(255,255,255,0.7); text-decoration: none; transition: color 0.3s ease; }
+        .footer-section a:hover { color: white; }
 
         .footer-bottom {
           text-align: center;
           padding-top: 2rem;
-          border-top: 1px solid rgba(255, 255, 255, 0.1);
-          color: rgba(255, 255, 255, 0.6);
+          border-top: 1px solid rgba(255,255,255,0.1);
+          color: rgba(255,255,255,0.6);
         }
 
-        /* Mobile Menu Toggle */
-        .menu-toggle {
-          display: none;
-          flex-direction: column;
-          gap: 5px;
-          cursor: pointer;
-        }
+        .menu-toggle { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
 
-        .menu-toggle span {
-          width: 25px;
-          height: 3px;
-          background: var(--text-dark);
-          border-radius: 3px;
-          transition: all 0.3s ease;
-        }
+        .menu-toggle span { width: 25px; height: 3px; background: var(--text-dark); border-radius: 3px; transition: all 0.3s ease; }
 
-        /* Responsive */
         @media (max-width: 1024px) {
-          .contact-container {
-            grid-template-columns: 1fr;
-          }
-
-          .footer-content {
-            grid-template-columns: repeat(2, 1fr);
-          }
+          .contact-container { grid-template-columns: 1fr; }
+          .footer-content { grid-template-columns: repeat(2, 1fr); }
         }
 
         @media (max-width: 768px) {
-          section {
-            padding: 4rem 5%;
-          }
-
-          .hero {
-            flex-direction: column;
-            padding-top: 6rem;
-            text-align: center;
-          }
-
-          .hero-content {
-            max-width: 100%;
-          }
-
-          .hero-buttons {
-            justify-content: center;
-          }
-
-          .nav-links {
-            display: none;
-          }
-
-          .menu-toggle {
-            display: flex;
-          }
-
-          .services-grid,
-          .products-grid,
-          .tech-grid,
-          .process-steps,
-          .features-grid,
-          .testimonials-grid {
-            grid-template-columns: 1fr;
-          }
-
-          .footer-content {
-            grid-template-columns: 1fr;
-          }
-
-          .cta-section {
-            padding: 3rem 2rem;
-            margin: 4rem 5%;
-          }
-        }
-
-        /* Smooth Scrolling */
-        html {
-          scroll-behavior: smooth;
+          section { padding: 4rem 5%; }
+          .hero { flex-direction: column; padding-top: 6rem; text-align: center; }
+          .hero-content { max-width: 100%; }
+          .hero-buttons { justify-content: center; }
+          .nav-links { display: none; }
+          .menu-toggle { display: flex; }
+          .services-grid, .products-grid, .tech-grid, .process-steps, .features-grid, .testimonials-grid { grid-template-columns: 1fr; }
+          .footer-content { grid-template-columns: 1fr; }
+          .cta-section { padding: 3rem 2rem; margin: 4rem 5%; }
         }
       `}</style>
+
+      {/* JSON-LD Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@graph": [
+              {
+                "@type": "Organization",
+                "@id": "https://www.feanpaytechnologies.com.ng/#organization",
+                name: "FeanPay Technologies",
+                url: "https://www.feanpaytechnologies.com.ng",
+                logo: {
+                  "@type": "ImageObject",
+                  url: "https://www.feanpaytechnologies.com.ng/icon.svg",
+                },
+                description:
+                  "FeanPay Technologies is a service-based technology company in Lagos, Nigeria specialising in custom software development, AI integration, fintech solutions, mobile & web applications, and cloud services.",
+                address: {
+                  "@type": "PostalAddress",
+                  streetAddress: "No 4 Temitope Adaboyan, Irepodun",
+                  addressLocality: "Lagos",
+                  addressCountry: "NG",
+                  postalCode: "100001",
+                },
+                contactPoint: {
+                  "@type": "ContactPoint",
+                  telephone: "+2347014307244",
+                  contactType: "customer service",
+                  email: "info@feanpaytechnologies.com.ng",
+                  availableLanguage: "English",
+                },
+                sameAs: [],
+              },
+              {
+                "@type": "WebSite",
+                "@id": "https://www.feanpaytechnologies.com.ng/#website",
+                url: "https://www.feanpaytechnologies.com.ng",
+                name: "FeanPay Technologies",
+                publisher: {
+                  "@id": "https://www.feanpaytechnologies.com.ng/#organization",
+                },
+              },
+              {
+                "@type": "WebPage",
+                "@id": "https://www.feanpaytechnologies.com.ng/#webpage",
+                url: "https://www.feanpaytechnologies.com.ng",
+                name: "FeanPay Technologies | Innovative Digital Solutions",
+                isPartOf: {
+                  "@id": "https://www.feanpaytechnologies.com.ng/#website",
+                },
+                about: {
+                  "@id": "https://www.feanpaytechnologies.com.ng/#organization",
+                },
+                description:
+                  "Building innovative digital products — custom software, AI integration, fintech, and cloud solutions. Based in Lagos, Nigeria.",
+              },
+              {
+                "@type": "LocalBusiness",
+                "@id": "https://www.feanpaytechnologies.com.ng/#localbusiness",
+                name: "FeanPay Technologies",
+                image: "https://www.feanpaytechnologies.com.ng/og-image.png",
+                url: "https://www.feanpaytechnologies.com.ng",
+                telephone: "+2347014307244",
+                email: "info@feanpaytechnologies.com.ng",
+                address: {
+                  "@type": "PostalAddress",
+                  streetAddress: "No 4 Temitope Adaboyan, Irepodun",
+                  addressLocality: "Lagos",
+                  addressCountry: "NG",
+                  postalCode: "100001",
+                },
+                priceRange: "$$",
+                openingHoursSpecification: {
+                  "@type": "OpeningHoursSpecification",
+                  dayOfWeek: [
+                    "Monday",
+                    "Tuesday",
+                    "Wednesday",
+                    "Thursday",
+                    "Friday",
+                  ],
+                  opens: "09:00",
+                  closes: "18:00",
+                },
+              },
+            ],
+          }),
+        }}
+      />
 
       <nav>
         <div className="logo">FeanPay Technologies</div>
@@ -1064,7 +794,7 @@ export default function Home() {
                 <li>No app installation required</li>
                 <li>Secure & instant transfers</li>
               </ul>
-              <a href="#contact" className="btn btn-primary">Learn More</a>
+              <a href="https://feanpay.com/" target="_blank" rel="noopener noreferrer" className="btn btn-primary">Learn More</a>
             </div>
           </div>
           <div className="product-card">
@@ -1079,7 +809,7 @@ export default function Home() {
                 <li>Easy installation & maintenance</li>
                 <li>Environmental impact tracking</li>
               </ul>
-              <a href="#contact" className="btn btn-primary">Learn More</a>
+              <a href="https://www.feansolar.com.ng/" target="_blank" rel="noopener noreferrer" className="btn btn-primary">Learn More</a>
             </div>
           </div>
         </div>
@@ -1262,7 +992,6 @@ export default function Home() {
               <div className="author-avatar">👤</div>
               <div className="author-info">
                 <h4>Sarah Johnson</h4>
-                <p>CEO, TechStart Inc</p>
               </div>
             </div>
           </div>
@@ -1272,7 +1001,6 @@ export default function Home() {
               <div className="author-avatar">👤</div>
               <div className="author-info">
                 <h4>Michael Chen</h4>
-                <p>CTO, FinanceFlow</p>
               </div>
             </div>
           </div>
@@ -1282,7 +1010,6 @@ export default function Home() {
               <div className="author-avatar">👤</div>
               <div className="author-info">
                 <h4>Emma Williams</h4>
-                <p>Founder, PayStream</p>
               </div>
             </div>
           </div>
@@ -1325,7 +1052,7 @@ export default function Home() {
             </div>
           </div>
           <div className="contact-form">
-            <form>
+            <form action="mailto:info@feanpaytechnologies.com.ng" method="POST" encType="text/plain">
               <div className="form-group">
                 <label htmlFor="name">Full Name</label>
                 <input type="text" id="name" name="name" required />
@@ -1380,18 +1107,9 @@ export default function Home() {
               <li><a href="#contact">Contact</a></li>
             </ul>
           </div>
-          <div className="footer-section">
-            <h3>Connect</h3>
-            <ul>
-              <li><a href="#">LinkedIn</a></li>
-              <li><a href="#">Twitter</a></li>
-              <li><a href="#">GitHub</a></li>
-              <li><a href="#">Facebook</a></li>
-            </ul>
-          </div>
         </div>
         <div className="footer-bottom">
-          <p>&copy; 2025 FeanPay Technologies. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} FeanPay Technologies. All rights reserved.</p>
         </div>
       </footer>
     </>
