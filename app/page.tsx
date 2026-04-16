@@ -598,6 +598,7 @@ export default function Home() {
           section { padding: 4rem 5%; }
           .hero { flex-direction: column; padding-top: 6rem; text-align: center; }
           .hero-content { max-width: 100%; }
+          .hero-image { display: none; }
           .hero-buttons { justify-content: center; }
           .nav-links { display: none; }
           .menu-toggle { display: flex; }
